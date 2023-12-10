@@ -3,6 +3,7 @@ using Ripley.Api.Provider.Application.Contracts.Infraestructure;
 using Ripley.Api.Provider.Application.Contracts.Persistence;
 using Ripley.Api.Provider.Application.Mail.Model;
 using Ripley.Api.Provider.Domain.Entities;
+using System.Text.RegularExpressions;
 
 namespace Ripley.Api.Provider.Application.Provider.Commands.CreateProvider
 {
@@ -39,6 +40,10 @@ namespace Ripley.Api.Provider.Application.Provider.Commands.CreateProvider
 
                 if (expcetionResponse.Any()) throw new Exception(String.Join(" | ", expcetionResponse.ToList()));
             }
+
+            var validationRucRegex = request.VendorNumber.Length; 
+            if (validationRucRegex > 11)
+                throw new Exception("An exception has occurred, the RUC is invalid due to the number of characters");
 
             var responseProvider = new ProviderEntity
             {
