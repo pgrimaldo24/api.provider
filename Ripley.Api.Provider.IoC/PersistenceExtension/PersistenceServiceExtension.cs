@@ -15,7 +15,7 @@ namespace Ripley.Api.Provider.IoC.PersistenceExtension
         public static IServiceCollection AddPersistenceServiceRegistrationExtension(this IServiceCollection services, IConfiguration configuration, AppSetting appSetting)
         { 
             services.AddDbContext<ProviderDbContext>(options => 
-                    options.UseSqlServer(String.Format("Data Source={0};Initial Catalog={1};Trusted_Connection=True;TrustServerCertificate=True", appSetting.ConnectionStrings.DataSource, appSetting.ConnectionStrings.Catalog))); 
+                    options.UseSqlServer(String.Format("Data Source={0};Initial Catalog={1};Persist Security Info=True;User ID={2};Password={3};MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=True;Pooling=false", appSetting.ConnectionStrings.DataSource, appSetting.ConnectionStrings.Catalog, appSetting.ConnectionStrings.User, appSetting.ConnectionStrings.Password))); 
         
             services.AddScoped<IUnitOfWork, UnitOfWork>(); 
             services.AddScoped<IUserRepository, UserRepository>();
