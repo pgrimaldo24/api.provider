@@ -10,6 +10,6 @@ namespace Ripley.Api.Provider.Application.Provider.Queries.DetailProducts
         public int Stock { get; set; }
         public string Sucursal { get; set; }
         public decimal? BrutoVent { get; set; }
-        public decimal? ImpuestoVent { get; set; }
+        public decimal? ImpuestoVent { get; set; } 
     }
 }
