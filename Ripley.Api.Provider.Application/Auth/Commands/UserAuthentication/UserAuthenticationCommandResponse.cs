@@ -8,6 +8,7 @@ namespace Ripley.Api.Provider.Application.Auth.Commands.UserAuthentication
         {
         }
 
+        public int ProviderId { get; set; }
         public string Token { get; set; }
     }
 }

@@ -51,7 +51,9 @@ namespace Ripley.Api.Provider.Application.Auth.Commands.UserAuthentication
             if (userResponseEntity.DateExpiry == null)
                 throw new Exception($"Oops! The user has expired, contact the system administrator");
 
+            var provider = await UnitOfWork.ProviderRepository.GetProviderByEmailAsync(request.User); 
             var token = await GenerarTokenJwtAsync(userResponseEntity);
+            userAuthenticationCommandResponse.ProviderId = provider.Id;
             userAuthenticationCommandResponse.Message = "Successfully generated token";
             userAuthenticationCommandResponse.Token = token;
 

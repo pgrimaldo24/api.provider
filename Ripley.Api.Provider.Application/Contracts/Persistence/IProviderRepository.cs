@@ -4,5 +4,6 @@ namespace Ripley.Api.Provider.Application.Contracts.Persistence
 {
     public interface IProviderRepository : IGenericRepository<ProviderEntity>
     {
+        Task<ProviderEntity> GetProviderByEmailAsync(string email);
     }
 }
