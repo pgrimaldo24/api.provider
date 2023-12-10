@@ -48,6 +48,9 @@ namespace Ripley.Api.Provider.Application.Auth.Commands.UserAuthentication
             if (ReferenceEquals(userResponseEntity, null))
                 throw new Exception($"Oops! An exception has been generated, the username or password does not exist, try again.");
 
+            if (userResponseEntity.DateExpiry == null)
+                throw new Exception($"Oops! The user has expired, contact the system administrator");
+
             var token = await GenerarTokenJwtAsync(userResponseEntity);
             userAuthenticationCommandResponse.Message = "Successfully generated token";
             userAuthenticationCommandResponse.Token = token;
