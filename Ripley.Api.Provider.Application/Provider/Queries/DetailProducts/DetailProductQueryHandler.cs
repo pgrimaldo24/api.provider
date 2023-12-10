@@ -1,9 +1,7 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Server.HttpSys;
 using Ripley.Api.Provider.Application.Contracts.Persistence;
 using Ripley.Api.Provider.CrossCutting.Extensions.Pagination.QueryableExtension;
 using Ripley.Api.Provider.Domain.Configuration.Pagination.Result;
-using System.Linq;
 
 namespace Ripley.Api.Provider.Application.Provider.Queries.DetailProducts
 {
@@ -67,7 +65,7 @@ namespace Ripley.Api.Provider.Application.Provider.Queries.DetailProducts
                 Stock = response.Stock,
                 ImpuestoVent = response.ImpuestoVent,
                 BrutoVent = response.BrutoVent
-            }).AsQueryable(); 
+            }).AsQueryable();
             var response = query.SortBy(request.Order, request.ColumnOrder)
                          .GetPaged(request.Page, request.PageSize);
             detailProductQueryVmList = response;

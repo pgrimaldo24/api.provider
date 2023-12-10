@@ -7,9 +7,9 @@ namespace Ripley.Api.Provider.Persistence.Context
     public class ProviderDbContext : DbContext
     {
         public ProviderDbContext(DbContextOptions<ProviderDbContext> options) : base(options)
-        { 
+        {
         }
-        
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
@@ -21,7 +21,7 @@ namespace Ripley.Api.Provider.Persistence.Context
             modelBuilder.ApplyConfiguration(new RolConfiguration());
             modelBuilder.ApplyConfiguration(new SubOrderConfiguration());
             modelBuilder.ApplyConfiguration(new SucursalConfiguration());
-            modelBuilder.ApplyConfiguration(new UserConfiguration()); 
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
 
         }
 

@@ -9,10 +9,10 @@ namespace Ripley.Api.Provider.Persistence.Configuration
         public void Configure(EntityTypeBuilder<RolEntity> entity)
         {
             entity.ToTable("Rol", "provider_adm");
-             
+
             entity.HasKey(e => e.RolId).HasName("PK__Rol__F92302F1A1BFD832");
 
-            entity.Property(e => e.RolId).HasColumnName("RolId"); 
+            entity.Property(e => e.RolId).HasColumnName("RolId");
         }
     }
 }

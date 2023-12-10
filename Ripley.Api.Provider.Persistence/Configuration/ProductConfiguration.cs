@@ -14,7 +14,7 @@ namespace Ripley.Api.Provider.Persistence.Configuration
                .HasName("PK__Product__3214EC070920BDD5");
 
             entity.Property(e => e.Id).HasColumnName("Id");
-             
+
             entity.HasOne(d => d.Category)
                      .WithMany(p => p.Products)
                      .HasForeignKey(d => d.CategoryId)

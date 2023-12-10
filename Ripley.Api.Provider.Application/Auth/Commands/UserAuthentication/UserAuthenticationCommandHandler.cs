@@ -13,7 +13,7 @@ namespace Ripley.Api.Provider.Application.Auth.Commands.UserAuthentication
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly AppSetting _appSettings;
-         
+
         public UserAuthenticationCommandHandler(IUnitOfWork unitOfWork, AppSetting appSettings)
         {
             _unitOfWork = unitOfWork;
@@ -25,13 +25,13 @@ namespace Ripley.Api.Provider.Application.Auth.Commands.UserAuthentication
         public async Task<UserAuthenticationCommandResponse> Handle(UserAuthenticationCommand request, CancellationToken cancellationToken)
         {
             var userAuthenticationCommandResponse = new UserAuthenticationCommandResponse();
-            
+
             var validatorAuth = new UserAuthenticationCommandValidator();
 
             var validationResult = await validatorAuth.ValidateAsync(request, CancellationToken.None);
 
             if (validationResult.Errors.Any())
-            { 
+            {
                 var expcetionResponse = new List<string>();
 
                 foreach (var error in validationResult.Errors)
@@ -43,16 +43,16 @@ namespace Ripley.Api.Provider.Application.Auth.Commands.UserAuthentication
                 {
                     throw new Exception(String.Join(" | ", expcetionResponse.ToList()));
                 }
-            } 
+            }
             var userResponseEntity = await UnitOfWork.UserRepository.ValidationCredentialsAsync(request.User, request.Password);
             if (ReferenceEquals(userResponseEntity, null))
-                throw new Exception($"Oops! An exception has been generated, the username or password does not exist, try again."); 
+                throw new Exception($"Oops! An exception has been generated, the username or password does not exist, try again.");
 
-            var token = await GenerarTokenJwtAsync(userResponseEntity); 
+            var token = await GenerarTokenJwtAsync(userResponseEntity);
             userAuthenticationCommandResponse.Message = "Successfully generated token";
             userAuthenticationCommandResponse.Token = token;
 
-            return userAuthenticationCommandResponse; 
+            return userAuthenticationCommandResponse;
         }
 
         private async Task<string> GenerarTokenJwtAsync(UserEntity userEntity)
@@ -68,8 +68,8 @@ namespace Ripley.Api.Provider.Application.Auth.Commands.UserAuthentication
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
-                { 
-                  new Claim("user", userEntity.User), 
+                {
+                  new Claim("user", userEntity.User),
                   new Claim("rolId", rolEntityById.Description)
                 }),
                 Expires = expires,

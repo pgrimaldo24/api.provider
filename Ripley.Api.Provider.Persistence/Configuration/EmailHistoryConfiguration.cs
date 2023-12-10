@@ -11,7 +11,7 @@ namespace Ripley.Api.Provider.Persistence.Configuration
             entity.ToTable("EmailHistory", "provider_adm");
 
             entity.HasKey(e => e.Id).HasName("PK__EmailHis__3214EC07A2AAB61B");
-            entity.Property(e => e.Id).HasColumnName("Id"); 
+            entity.Property(e => e.Id).HasColumnName("Id");
         }
     }
 }

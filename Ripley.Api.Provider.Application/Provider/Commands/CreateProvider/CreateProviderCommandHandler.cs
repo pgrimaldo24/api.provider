@@ -55,13 +55,13 @@ namespace Ripley.Api.Provider.Application.Provider.Commands.CreateProvider
             };
 
             responseProvider = await UnitOfWork.ProviderRepository.AddAsync(responseProvider);
-             
+
             var dateExpiry = DateTime.Now;
-            dateExpiry = dateExpiry.AddDays(1); 
+            dateExpiry = dateExpiry.AddDays(1);
             var @createUserEntity = new UserEntity
             {
                 User = request.Email,
-                Password = "123456789", 
+                Password = "123456789",
                 RolId = 1,
                 StartDate = DateTime.Now,
                 DateExpiry = dateExpiry
@@ -84,8 +84,8 @@ namespace Ripley.Api.Provider.Application.Provider.Commands.CreateProvider
                 cc = emailEntity.Cc,
                 description = String.Format(emailEntity.ConfigContent, responseProvider.VendorName, @createUserEntity.User)
             };
-             
-            MailServerService.SendEmail(parameters); 
+
+            MailServerService.SendEmail(parameters);
 
             var @history = new EmailHistoryEntity
             {
@@ -99,7 +99,7 @@ namespace Ripley.Api.Provider.Application.Provider.Commands.CreateProvider
             };
             @history = await UnitOfWork.EmailHistoryRepository.AddAsync(@history);
             await UnitOfWork.CompletedAsync();
-            createProviderCommandResponse.Message = "The provider was successfully registered"; 
+            createProviderCommandResponse.Message = "The provider was successfully registered";
             return createProviderCommandResponse;
         }
     }

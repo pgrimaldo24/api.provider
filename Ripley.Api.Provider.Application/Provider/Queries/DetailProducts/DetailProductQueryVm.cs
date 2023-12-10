@@ -1,6 +1,4 @@
-﻿using Ripley.Api.Provider.CrossCutting.Base;
-
-namespace Ripley.Api.Provider.Application.Provider.Queries.DetailProducts
+﻿namespace Ripley.Api.Provider.Application.Provider.Queries.DetailProducts
 {
     public class DetailProductQueryVm
     {
@@ -10,6 +8,6 @@ namespace Ripley.Api.Provider.Application.Provider.Queries.DetailProducts
         public int Stock { get; set; }
         public string Sucursal { get; set; }
         public decimal? BrutoVent { get; set; }
-        public decimal? ImpuestoVent { get; set; } 
+        public decimal? ImpuestoVent { get; set; }
     }
 }

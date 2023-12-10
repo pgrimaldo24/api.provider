@@ -23,7 +23,7 @@ namespace Ripley.Api.Provider.Controllers
         public async Task<ActionResult<UserAuthenticationCommandResponse>> GetPromotionsRebates([FromBody] UserAuthenticationCommand options)
         {
             try
-            {  
+            {
                 var result = await Mediator.Send(options);
                 return Ok(result);
             }

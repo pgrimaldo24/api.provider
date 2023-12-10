@@ -19,14 +19,14 @@ namespace Ripley.Api.Provider.Configuration.Startup
             builder.Services.AddSingleton(x => x.GetService<IOptions<AppSetting>>().Value);
 
             var appSetting = appSettings.Get<AppSetting>();
-            
+
             builder.Services.AddControllers();
             builder.Services.AddOptions();
 
             builder.Services.AddMvc();
 
             builder.Services.AddApplicationServiceRegistrationExtension(builder.Configuration);
-            builder.Services.AddPersistenceServiceRegistrationExtension(builder.Configuration, appSetting); 
+            builder.Services.AddPersistenceServiceRegistrationExtension(builder.Configuration, appSetting);
 
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddEndpointsApiExplorer();
@@ -90,5 +90,5 @@ namespace Ripley.Api.Provider.Configuration.Startup
 
             return app;
         }
-    } 
+    }
 }

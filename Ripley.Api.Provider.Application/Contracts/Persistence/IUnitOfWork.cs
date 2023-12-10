@@ -2,9 +2,9 @@
 {
     public interface IUnitOfWork : IDisposable
     {
-        IUserRepository UserRepository { get; } 
+        IUserRepository UserRepository { get; }
         IRolRepository RolRepository { get; }
-        IProviderRepository ProviderRepository { get; } 
+        IProviderRepository ProviderRepository { get; }
         IEmailRepository EmailRepository { get; }
         IEmailHistoryRepository EmailHistoryRepository { get; }
         IProductRepository ProductRepository { get; }

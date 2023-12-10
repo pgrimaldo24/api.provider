@@ -9,7 +9,7 @@ namespace Ripley.Api.Provider.Persistence.Configuration
         public void Configure(EntityTypeBuilder<SucursalEntity> entity)
         {
             entity.ToTable("Sucursal", "provider_adm");
-              
+
             entity.HasKey(e => e.Id).HasName("PK__Sucursal__3214EC075A660D5B");
             entity.Property(e => e.Id).HasColumnName("Id");
 

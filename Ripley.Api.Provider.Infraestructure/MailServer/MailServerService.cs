@@ -26,7 +26,7 @@ namespace Ripley.Api.Provider.Infraestructure.MailServer
                     throw new Exception($"The parametersMailSendingModel object cannot be null");
 
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-              
+
                 var mineMessage = new MimeMessage();
                 mineMessage.From.Add(new MailboxAddress("Ripley", parametersMailSendingModel.sender_email));
                 mineMessage.Sender = new MailboxAddress("Ripley", parametersMailSendingModel.sender_email);
@@ -58,7 +58,7 @@ namespace Ripley.Api.Provider.Infraestructure.MailServer
                 {
                     body.HtmlBody += message + "<br/>";
                 });
-                 
+
                 mineMessage.Body = body.ToMessageBody();
 
                 using (var smtp = new SmtpClient())

@@ -13,11 +13,11 @@ namespace Ripley.Api.Provider.IoC.PersistenceExtension
     public static class PersistenceServiceExtension
     {
         public static IServiceCollection AddPersistenceServiceRegistrationExtension(this IServiceCollection services, IConfiguration configuration, AppSetting appSetting)
-        { 
-            services.AddDbContext<ProviderDbContext>(options => 
-                    options.UseSqlServer(String.Format("Data Source={0};Initial Catalog={1};Trusted_Connection=True;TrustServerCertificate=True", appSetting.ConnectionStrings.DataSource, appSetting.ConnectionStrings.Catalog))); 
-        
-            services.AddScoped<IUnitOfWork, UnitOfWork>(); 
+        {
+            services.AddDbContext<ProviderDbContext>(options =>
+                    options.UseSqlServer(String.Format("Data Source={0};Initial Catalog={1};Trusted_Connection=True;TrustServerCertificate=True", appSetting.ConnectionStrings.DataSource, appSetting.ConnectionStrings.Catalog)));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IRolRepository, RolRepository>();
             services.AddScoped<IProviderRepository, ProviderRepository>();

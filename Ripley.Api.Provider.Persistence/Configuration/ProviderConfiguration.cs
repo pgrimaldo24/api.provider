@@ -12,7 +12,7 @@ namespace Ripley.Api.Provider.Persistence.Configuration
 
             entity.HasKey(e => e.Id).HasName("PK__Provider__3214EC07C6BA7D1A");
             entity.Property(e => e.Id).HasColumnName("Id");
-             
+
         }
     }
 }

@@ -6,9 +6,9 @@ using Ripley.Api.Provider.Persistence.Context;
 namespace Ripley.Api.Provider.Persistence.Repositories
 {
     public class ProductRepository : GenericRepository<ProductEntity>, IProductRepository
-    { 
+    {
         public ProductRepository(ProviderDbContext dbContext) : base(dbContext)
-        { 
+        {
         }
 
         public async Task<List<ProductEntity>> GetProductsByMerchantId(int id)

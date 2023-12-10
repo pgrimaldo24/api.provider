@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Ripley.Api.Provider.Persistence.Models
+﻿namespace Ripley.Api.Provider.Persistence.Models
 {
     public partial class Rol
     {

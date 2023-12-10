@@ -14,7 +14,7 @@ namespace Ripley.Api.Provider.Persistence.Repositories
         public async Task<UserEntity> ValidationCredentialsAsync(string user, string password)
         {
             return await this._dbSet
-                    .FirstOrDefaultAsync(x => x.User == user 
+                    .FirstOrDefaultAsync(x => x.User == user
                                            && x.Password == password);
         }
     }

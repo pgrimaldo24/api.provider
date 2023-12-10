@@ -7,7 +7,7 @@ namespace Ripley.Api.Provider.Persistence.Repositories
     public class SucursalRepository : GenericRepository<SucursalEntity>, ISucursalRepository
     {
         public SucursalRepository(ProviderDbContext dbContext) : base(dbContext)
-        { 
+        {
         }
     }
 }

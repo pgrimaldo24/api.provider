@@ -10,7 +10,7 @@ namespace Ripley.Api.Provider.Persistence.Configuration
         {
             entity.ToTable("Email", "provider_adm");
             entity.HasKey(e => e.Id).HasName("PK__Email__3214EC07BB59551F");
-            entity.Property(e => e.Id).HasColumnName("Id"); 
+            entity.Property(e => e.Id).HasColumnName("Id");
         }
     }
 }

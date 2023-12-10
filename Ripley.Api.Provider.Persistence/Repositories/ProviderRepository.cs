@@ -7,7 +7,7 @@ namespace Ripley.Api.Provider.Persistence.Repositories
     public class ProviderRepository : GenericRepository<ProviderEntity>, IProviderRepository
     {
         public ProviderRepository(ProviderDbContext dbContext) : base(dbContext)
-        { 
+        {
         }
     }
 }

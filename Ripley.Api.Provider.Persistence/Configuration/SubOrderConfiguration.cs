@@ -14,7 +14,7 @@ namespace Ripley.Api.Provider.Persistence.Configuration
 
             entity.Property(e => e.Commission).HasColumnType("decimal(18, 4)");
 
-  
+
             entity.HasOne(d => d.OrderGroupNavigation)
                    .WithMany()
                    .HasForeignKey(d => d.OrderGroup)

@@ -3,7 +3,7 @@
     public partial class ProviderEntity
     {
         public ProviderEntity()
-        { 
+        {
             Products = new HashSet<ProductEntity>();
         }
 
@@ -19,7 +19,7 @@
         public bool Active { get; set; }
         public string? CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; }
-         
+
         public virtual ICollection<ProductEntity> Products { get; set; }
     }
 }

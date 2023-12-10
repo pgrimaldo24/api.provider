@@ -11,7 +11,7 @@ namespace Ripley.Api.Provider.Persistence.Configuration
             entity.ToTable("User", "provider_adm");
             entity.HasKey(e => e.Id).HasName("PK__User__3214EC076C39ED64");
             entity.Property(e => e.Id).HasColumnName("Id");
- 
+
             entity.HasOne(d => d.Rol)
                   .WithMany(p => p.Users)
                   .HasForeignKey(d => d.RolId)

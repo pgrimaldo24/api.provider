@@ -11,7 +11,7 @@ namespace Ripley.Api.Provider.Controllers
     [Route("api/v1/[controller]")]
     [ApiController]
     public class ProviderController : ControllerBase
-    { 
+    {
         private readonly IMediator _mediator;
 
         public ProviderController(IMediator mediator)
@@ -74,7 +74,7 @@ namespace Ripley.Api.Provider.Controllers
                 if (pageFilter != null) page = int.Parse(pageFilter.Value);
                 if (pageSizeFilter != null) pageSize = int.Parse(pageSizeFilter.Value);
                 if (columnOrderFilter != null) columnOrderStr = columnOrderFilter.Value;
-                if (merchantIdFilter != null) merchantId = int.Parse(merchantIdFilter.Value); 
+                if (merchantIdFilter != null) merchantId = int.Parse(merchantIdFilter.Value);
                 if (descriptionFilter != null) descriptionStr = descriptionFilter.Value;
                 if (categoryIdFilter != null) category = categoryIdFilter.Value;
                 if (sucursalIdFilter != null) sucursal = sucursalIdFilter.Value;
@@ -84,12 +84,12 @@ namespace Ripley.Api.Provider.Controllers
                     Page = page,
                     PageSize = pageSize,
                     ColumnOrder = columnOrderStr,
-                    Order = "ASC", 
-                    MerchantId  = merchantId,
+                    Order = "ASC",
+                    MerchantId = merchantId,
                     DescriptionProduct = descriptionStr,
                     Category = category,
                     Sucursal = sucursal
-                }; 
+                };
                 var result = await Mediator.Send(request);
                 return Ok(result);
             }
@@ -103,5 +103,5 @@ namespace Ripley.Api.Provider.Controllers
                     });
             }
         }
-    } 
-} 
+    }
+}

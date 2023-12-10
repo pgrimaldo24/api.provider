@@ -5,9 +5,9 @@ using Ripley.Api.Provider.Persistence.Context;
 namespace Ripley.Api.Provider.Persistence.Repositories
 {
     public class RolRepository : GenericRepository<RolEntity>, IRolRepository
-    { 
+    {
         public RolRepository(ProviderDbContext dbContext) : base(dbContext)
-        { 
+        {
         }
     }
 }
