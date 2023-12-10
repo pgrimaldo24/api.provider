@@ -104,6 +104,7 @@ namespace Ripley.Api.Provider.Application.Provider.Commands.CreateProvider
             };
             @history = await UnitOfWork.EmailHistoryRepository.AddAsync(@history);
             await UnitOfWork.CompletedAsync();
+            createProviderCommandResponse.ProviderId = responseProvider.Id;
             createProviderCommandResponse.Message = "The provider was successfully registered";
             return createProviderCommandResponse;
         }

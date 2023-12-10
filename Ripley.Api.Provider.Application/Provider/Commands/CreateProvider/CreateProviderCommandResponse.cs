@@ -4,5 +4,6 @@ namespace Ripley.Api.Provider.Application.Provider.Commands.CreateProvider
 {
     public class CreateProviderCommandResponse : BaseResponse
     {
-    }
+        public int ProviderId { get; set; }
+    }     
 }

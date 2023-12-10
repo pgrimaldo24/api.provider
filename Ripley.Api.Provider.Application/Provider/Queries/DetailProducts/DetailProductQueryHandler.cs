@@ -47,7 +47,7 @@ namespace Ripley.Api.Provider.Application.Provider.Queries.DetailProducts
 
             var data = detailProductVmList.Where(x => !string.IsNullOrEmpty(x.Description));
 
-            if (!string.IsNullOrEmpty(request.DescriptionProduct))
+            if (!string.IsNullOrEmpty(request.DescriptionProduct) && request.DescriptionProduct != "null")
                 data = data.Where(x => x.Description.Contains(request.DescriptionProduct));
 
             if (!string.IsNullOrEmpty(request.Category) && request.Category != "null")
