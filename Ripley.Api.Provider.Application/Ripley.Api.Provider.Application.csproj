@@ -16,8 +16,4 @@
     <ProjectReference Include="..\Ripley.Api.Provider.Domain\Ripley.Api.Provider.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Provider\Queries\" />
-  </ItemGroup>
-
 </Project>

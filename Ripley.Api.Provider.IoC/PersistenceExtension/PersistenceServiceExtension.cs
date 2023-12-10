@@ -24,6 +24,9 @@ namespace Ripley.Api.Provider.IoC.PersistenceExtension
             services.AddScoped<IMailServerService, MailServerService>();
             services.AddScoped<IEmailRepository, EmailRepository>();
             services.AddScoped<IEmailHistoryRepository, EmailHistoryRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ISucursalRepository, SucursalRepository>();
 
             return services;
         }

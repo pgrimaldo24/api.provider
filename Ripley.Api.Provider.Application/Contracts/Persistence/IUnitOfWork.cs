@@ -7,6 +7,9 @@
         IProviderRepository ProviderRepository { get; } 
         IEmailRepository EmailRepository { get; }
         IEmailHistoryRepository EmailHistoryRepository { get; }
+        IProductRepository ProductRepository { get; }
+        ICategoryRepository CategoryRepository { get; }
+        ISucursalRepository SucursalRepository { get; }
         Task<int> CompletedAsync();
     }
 }
